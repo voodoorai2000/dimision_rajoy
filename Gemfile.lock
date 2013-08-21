@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/voodoorai2000/sms-fu.git
+  revision: e8ba50be472d5c411b47ead125f6e4e4dcf20411
+  specs:
+    sms_fu (1.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -83,7 +89,6 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
-    sms_fu (1.1.2)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -122,7 +127,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc
-  sms_fu
+  sms_fu!
   sqlite3-ruby (~> 1.3.0)
   turbolinks
   uglifier (>= 1.3.0)

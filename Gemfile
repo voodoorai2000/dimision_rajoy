@@ -38,7 +38,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'sms_fu'
+gem 'sms_fu', github: 'voodoorai2000/sms-fu'
 gem 'pony'
 
 # Use ActiveModel has_secure_password
