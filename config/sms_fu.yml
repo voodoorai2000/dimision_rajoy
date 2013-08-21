@@ -1,0 +1,7 @@
+config:
+  from_address: noreply@domain.com
+
+carriers:
+  vodafone-spain: 
+    name: Vodafone (Japan - Spain)
+    value: "@vodafone.es"
