@@ -1,5 +1,5 @@
 <p>Introduzca su número de móvil</p>
 <%= form_for @verification do |f| %>
-  <%= f.text_field :phone %>
+  <%= f.text_field :phone, :autofocus => true %>
   <div><%= f.submit "Enviar" %></div>
 <% end %>

@@ -1,8 +1,7 @@
 <p>Introduzca el código de verificación que te hemos enviado al móvil</p>
 <%= form_for @verification do |f| %>
-  <%= f.text_field :code %>
+  <%= f.text_field :code, value: '' %>
   <div><%= f.submit "Enviar" %></div>
 <% end %>
 
-<div><input type="text"/></div>
-<%= link_to "Enviar", new_comment_path %>
+<%= @verification.code %>

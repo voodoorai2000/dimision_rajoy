@@ -18,9 +18,9 @@ class VerificationsController < ApplicationController
     client.account.sms.messages.create(
       :from => from,
       :to => @verification.phone,
-      :body => "DimisionRajoy.com 
-                Código de verificación: #{@verification.code}"
+      :body => "DimisionRajoy.com\nCódigo de verificación: #{@verification.code}"
     )
+    puts "Código de verificación: #{@verification.code}"
     
     redirect_to edit_verification_path(@verification)
   end
@@ -31,7 +31,7 @@ class VerificationsController < ApplicationController
   
   def update
     @verification = Verification.find(params[:id])
-    if @verification.code = params[:verification][:code]
+    if @verification.code == params[:verification][:code]
       redirect_to new_comment_path
     else
       redirect_to edit_verification_path(@verification), alert: "Código de verificación incorrecto"

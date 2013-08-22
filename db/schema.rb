@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20130822180854) do
 
   create_table "verifications", force: true do |t|
     t.string   "phone"
-    t.integer  "code"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
