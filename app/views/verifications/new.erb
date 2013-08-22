@@ -1,3 +1,5 @@
 <p>Introduzca su número de móvil</p>
-<div><input type="text"/></div>
-<%= link_to "Enviar", edit_verification_path(id: 1) %>
+<%= form_for @verification do |f| %>
+  <%= f.text_field :phone %>
+  <div><%= f.submit "Enviar" %></div>
+<% end %>
