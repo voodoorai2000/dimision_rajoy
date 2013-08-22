@@ -18,7 +18,8 @@ class VerificationsController < ApplicationController
     client.account.sms.messages.create(
       :from => from,
       :to => @verification.phone,
-      :body => "Este el el código que debes introducir en www.dimisiónrajoy.com: #{@verification.code}"
+      :body => "DimisionRajoy.com 
+                Código de verificación: #{@verification.code}"
     )
     
     redirect_to edit_verification_path(@verification)
