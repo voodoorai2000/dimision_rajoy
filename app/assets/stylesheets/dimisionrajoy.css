@@ -1,0 +1,251 @@
+/*!
+ * DimisionRajoy.com
+ *
+ * Custom CSS Styles
+ */
+
+ body {
+ 	background: url(../images/bg.jpg);
+ }
+
+ .rajoy-headline {
+  color: #1abc9c;
+  font-size: 39.998000000000005px /* 40px */;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 50px;
+  padding: 40px 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.rajoy-row {
+  margin: 0 auto;
+  padding: 0 20px 50px;
+  width: 900px;
+  *zoom: 1;
+}
+
+.rajoy-row-narrow {
+  margin: 0 auto;
+  padding: 0 20px 50px;
+  width: 700px;
+  *zoom: 1;
+}
+
+.rajoy-row:before, 
+.rajoy-row:after,
+.rajoy-row-narrow:before,
+.rajoy-row-narrow:after {
+  display: table;
+  content: "";
+}
+.rajoy-row:after,
+.rajoy-row-narrow:after {
+  clear: both;
+}
+
+.rajoy-row h2 {
+  text-align: center;
+}
+
+.rajoy-col {
+  float: left;
+  margin: 0 20px;
+  width: 410px;
+}
+
+.ui-wizard {
+  background: #ebedef;
+  border-radius: 32px;
+  height: 12px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+  margin-bottom: 20px;
+  position: relative;
+}
+.ui-wizard .bar {
+  background: #1abc9c;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+}
+.ui-wizard .bar-success {
+  background-color: #2ecc71;
+  filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+}
+.ui-wizard .bar-warning {
+  background-color: #f1c40f;
+  filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+}
+.ui-wizard .bar-danger {
+  background-color: #e74c3c;
+  filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+}
+.ui-wizard .bar-info {
+  background-color: #3498db;
+  filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+}
+.ui-wizard-step {
+  background-color: #ebedef;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50%;
+  /*cursor: pointer;*/
+  height: 19px;
+  margin-left: -11px;
+  padding-top: 3px;
+  position: absolute;
+  top: -5px;
+  width: 22px;
+  z-index: 2;
+  -webkit-transition: background 0.25s;
+  -moz-transition: background 0.25s;
+  -o-transition: background 0.25s;
+  transition: background 0.25s;
+  -webkit-backface-visibility: hidden;
+}
+
+.ui-wizard-step-done {
+  color: #fff;
+  background-color: #16a085;
+}
+
+.ui-wizard-step-current {
+  color: #fff;
+  background-color: #16a085;
+  border: #fff 2px solid;
+  font-size: 19px;
+  height: 25px;
+  margin-left: -11px;
+  padding-top: 1px;
+  position: absolute;
+  top: -9px;
+  width: 26px;
+}
+
+.ui-wizard-range {
+  background-color: #1abc9c;
+  border-radius: 30px 0 0 30px;
+  display: block;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.ui-wizard-segment {
+  background-color: #d9dbdd;
+  border-radius: 50%;
+  float: left;
+  height: 6px;
+  margin: 3px -6px 0 0;
+  width: 6px;
+}
+.ui-wizard-label-pos {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+}
+.ui-wizard-label {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  top: 20px;
+  width: 120px;
+  text-align: center;
+  left: -57px;
+}
+
+.bottom-menu {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin-bottom: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1030;
+  padding: 10px 0 !important;
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .rajoy-row {
+    width: 650px;
+  }
+  
+  .rajoy-row-narrow {
+    width: 450px;
+  }
+
+  .rajoy-col {
+    float: left;
+    margin: 0 20px;
+    width: 265px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .hide-on-tablets {
+    display: none;
+  }
+  .rajoy-row {
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 15px !important;
+    width: auto;
+  }
+  .rajoy-row-narrow {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin: 0 44px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 25px !important;
+    width: auto;
+  }
+  .rajoy-col {
+    float: none;
+    margin: 0 0 18px !important;
+    padding: 0 !important;
+    width: auto;
+  }
+  .rajoy-headline {
+    font-size: 24px !important;
+    text-align: left;
+    margin-bottom: 25px !important;;
+    padding: 8px 0 !important;
+  }
+
+  .rajoy-row h2 {
+    font-size: 21px !important;
+  }
+
+  .btn.btn-huge {
+    font-size: 18px !important;
+    line-height: 18px !important;
+    padding: 13px 10px 14px !important;
+    margin-left: 0px
+  }
+
+  .bottom-menu {
+    position: relative;    
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .bottom-links {
+    margin-bottom: 10px !important;
+  }
+}
+
