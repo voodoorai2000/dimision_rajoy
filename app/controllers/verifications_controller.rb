@@ -8,18 +8,24 @@ class VerificationsController < ApplicationController
     @verification.code = Random.new.rand(1000...9999)
     @verification.save!
     
-    account_sid = ENV['DIMISION_RAJOY_TWILIO_SID']
-    auth_token  = ENV['DIMISION_RAJOY_TWILIO_TOKEN']
-    client = Twilio::REST::Client.new account_sid, auth_token
+    begin
+      account_sid = ENV['DIMISION_RAJOY_TWILIO_SID']
+      auth_token  = ENV['DIMISION_RAJOY_TWILIO_TOKEN']
+      client = Twilio::REST::Client.new account_sid, auth_token
 
-    from = ENV['DIMISION_RAJOY_TWILIO_PHONE']
-    code = Random.new.rand(1000...9999)
-    
-    client.account.sms.messages.create(
-      :from => from,
-      :to => @verification.phone,
-      :body => "DimisionRajoy.com\nCódigo de verificación: #{@verification.code}"
-    )
+      from = ENV['DIMISION_RAJOY_TWILIO_PHONE']
+      code = Random.new.rand(1000...9999)
+  
+      client.account.sms.messages.create(
+        :from => from,
+        :to => @verification.phone,
+        :body => "DimisionRajoy.com\nCódigo de verificación: #{@verification.code}"
+      )
+    rescue StandardError => bang
+      redirect_to new_verification_path, alert: "Error #{bang}"
+      return
+    end
+  
     puts "Código de verificación: #{@verification.code}"
     
     redirect_to edit_verification_path(@verification)
