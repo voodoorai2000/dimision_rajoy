@@ -6,3 +6,11 @@
 </ul>
 
 <%= link_to "votar", new_vote_path %>
+
+<ul id="comments">
+  <%= render @comments %>
+</ul>
+
+<div id="pagination">
+  <%= link_to_next_page @comments, 'Ver más', remote: true %>
+</div>

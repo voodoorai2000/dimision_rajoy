@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Comment.delete_all
+30.times {|i|
+  Comment.create! body: "#{i} Yo he votado Sí porque...!"
+}

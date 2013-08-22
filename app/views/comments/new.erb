@@ -1,5 +1,8 @@
 <h1>Gracias</h1>
 
 <p>Si quieres puedes poner un comentario</p>
-<div><textarea></textarea></div>
-<%= link_to "Enviar", root_path %>
+
+<%= form_for @comment do |f| %>
+  <%= f.text_area :body %>
+  <div><%= f.submit "Enviar" %></div>
+<% end %>
