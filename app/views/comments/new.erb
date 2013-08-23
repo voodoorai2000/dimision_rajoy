@@ -1,8 +1,32 @@
-<h1>Gracias</h1>
+<div class="rajoy-row pbl">
+  <h3>Su voto ha sido contabilizado</h3>
+  <p>Publicaremos el resultado de la votación el 10 de enero de 2014.</p>
+  <p>Opcionalmente puede publicar su opinión acerca de la gestión de Mariano Rajoy.</p>             
+</div> 
 
-<p>Si quieres puedes poner un comentario</p>
-
-<%= form_for @comment do |f| %>
-  <%= f.text_area :body %>
-  <div><%= f.submit "Enviar" %></div>
+<%= form_for @comment, html: {id: 'form'} do |f| %>
+  <div class="rajoy-row-center">
+    <%= render "shared/flash" %>
+    <%= f.text_area :body, rows: 3, placeholder: "Mi opinión...", class: "span12" %>
+    <a href="#" id="submit" class="btn btn-block btn-primary btn-embossed">
+      Publicar mi opinión
+    </a>
+    <a href="#" class="btn btn-block btn-embossed">
+      Volver a la página principal
+    </a>
+  </div>
 <% end %>
+
+<div class="rajoy-row-center social">
+  <p>Da a conocer DimisionRajoy.com</p>
+  <a href="http://www.facebook.com/share.php?u=dimisionrajoy.com" class="btn btn-small btn-social-facebook btn-embossed" 
+     onclick="return !window.open(this.href, 'Twitter', 'width=500,height=500')", target: "_blank">
+    <i class="fui-facebook"></i>
+    Compartir en Facebook
+  </a>
+  <a href="https://twitter.com/share?url=dimisionrajoy.com&text=<%= share_text %>" class="btn btn-small btn-social-twitter btn-embossed"
+     onclick="return !window.open(this.href, 'Twitter', 'width=500,height=500')", target: "_blank">
+    <i class="fui-twitter"></i>
+    Compartir en Twitter
+  </a>
+</div>

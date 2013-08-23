@@ -1,7 +1,18 @@
-<p>Introduzca el código de verificación que te hemos enviado al móvil</p>
-<%= form_for @verification do |f| %>
-  <%= f.text_field :code, value: '' %>
-  <div><%= f.submit "Enviar" %></div>
-<% end %>
-
-<%= @verification.code %>
+<div class="rajoy-row pbl">
+  <h3>Introduzca el Código de Verificación que le hemos enviado a su móvil</h3>
+  <p>Si no ha recibido un SMS con el código, <a href="">vuelva a intentárlo.</a></p>       
+</div> 
+<div class="rajoy-row">
+  <%= render "shared/flash" %>
+  <%= form_for @verification, html: {id: 'form'} do |f| %>
+    <div class="code-col" >
+       <%= f.text_field :code, value: '', placeholder: "Código de Verificación", class: "huge code-col" %>
+    </div>
+    <div class="code-col">
+       <a href="#" id="submit" class="btn btn-huge btn-block btn-primary btn-embossed">
+         <i class="fui-check-inverted"></i>
+         Completar Voto
+       </a>
+    </div>
+  <% end %>
+</div>

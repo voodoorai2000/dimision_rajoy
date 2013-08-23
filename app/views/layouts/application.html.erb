@@ -23,10 +23,48 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
-    <%= yield %>
+    <h1 class="rajoy-headline">Verifica tu voto</h1>
+    <div class="container">
+      <div class="rajoy-row-narrow">
+        <div id="slider" class="ui-wizard ui-wizard-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+            <div class="ui-wizard-label-pos" style="left: 0%;"><span class="ui-wizard-label">Vota</span></div> 
+            <div class="ui-wizard-label-pos" style="left: 50%;"><span class="ui-wizard-label">Verifica tu voto</span></div>
+            <div class="ui-wizard-label-pos" style="left: 100%;"><span class="ui-wizard-label">Opina</span></div>    
+            <div class="ui-wizard-range ui-widget-header ui-corner-all ui-wizard-range-min" style="width: 50%;"></div>    
+            <span class="ui-wizard-step ui-wizard-step-done ui-state-default ui-corner-all"  style="left: 0%;">
+              <i class="fui-check-inverted"></i>
+            </span>     
+            <span class="ui-wizard-step ui-wizard-step-current ui-state-default ui-corner-all"  style="left: 50%;">2</span>
+            <span class="ui-wizard-step ui-state-default ui-corner-all" style="left: 100%;">3</span>
+        </div>
+      </div>
+      
+      <%= yield %>
+      
+    </div>
+    
+    <footer>
+      <div class="bottom-menu">
+        <div class="container">
+          <div class="row">
+            <div class="span10">
+              <!--<a href="#fakelink" class="fui-flat"></a>-->
+              <ul class="bottom-links">
+                <li>DimisionRajoy.com</li>
+                <li>Promovido por <a href="#fakelink">ATD! Ahora, t&uacute; decides!</a></li>
+              </ul>
+            </div>
+            <div class="span2">
+              <ul class="bottom-icons">
+                <li><a href="#fakelink" class="fui-facebook"></a></li>
+                <li><a href="#fakelink" class="fui-twitter"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 </html>

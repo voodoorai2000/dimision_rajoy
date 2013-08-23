@@ -1,5 +1,20 @@
-<p>Introduzca su número de móvil</p>
-<%= form_for @verification do |f| %>
-  <%= f.text_field :phone, :autofocus => true %>
-  <div><%= f.submit "Enviar" %></div>
-<% end %>
+<div class="rajoy-row pbl">
+  <h3>Para evitar más de un voto por persona...</h3>
+  <p>Su voto todavía no ha sido contabilizado.</p>            
+  <p>Por favor introduzca su móvil y recibirá un SMS con un código de verificación.</p>
+</div> 
+
+<div class="rajoy-row">
+  <%= render "shared/flash" %>
+  <%= form_for @verification, html: {id: 'form'} do |f| %>
+    <div class="code-col" >
+      <%= f.text_field :phone, :autofocus => true, placeholder: "Número de móvil", class: "huge code-col"  %>
+    </div>
+    <div class="code-col">
+       <a href="#" id="submit" class="btn btn-huge btn-block btn-primary btn-embossed">
+         Conseguir código
+         <i class="fui-arrow-right pull-right"></i>
+       </a>
+    </div>
+  <% end %>
+</div>
