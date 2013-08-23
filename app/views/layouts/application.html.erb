@@ -1,15 +1,13 @@
 <!DOCTYPE html>
   <head>
   	<meta charset="utf-8" />
-  	<title>Vota - DimisionRajoy.com</title>
-
+  	<title><%= @title ? "#{@title} - DimisionRajoy.com" : "DimisionRajoy.com" %></title>
+  	
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
     <%= csrf_meta_tags %>
@@ -23,25 +21,8 @@
   </head>
 
   <body>
-    <h1 class="rajoy-headline">Verifica tu voto</h1>
-    <div class="container">
-      <div class="rajoy-row-narrow">
-        <div id="slider" class="ui-wizard ui-wizard-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
-            <div class="ui-wizard-label-pos" style="left: 0%;"><span class="ui-wizard-label">Vota</span></div> 
-            <div class="ui-wizard-label-pos" style="left: 50%;"><span class="ui-wizard-label">Verifica tu voto</span></div>
-            <div class="ui-wizard-label-pos" style="left: 100%;"><span class="ui-wizard-label">Opina</span></div>    
-            <div class="ui-wizard-range ui-widget-header ui-corner-all ui-wizard-range-min" style="width: 50%;"></div>    
-            <span class="ui-wizard-step ui-wizard-step-done ui-state-default ui-corner-all"  style="left: 0%;">
-              <i class="fui-check-inverted"></i>
-            </span>     
-            <span class="ui-wizard-step ui-wizard-step-current ui-state-default ui-corner-all"  style="left: 50%;">2</span>
-            <span class="ui-wizard-step ui-state-default ui-corner-all" style="left: 100%;">3</span>
-        </div>
-      </div>
-      
-      <%= yield %>
-      
-    </div>
+    
+    <%= yield %>
     
     <footer>
       <div class="bottom-menu">

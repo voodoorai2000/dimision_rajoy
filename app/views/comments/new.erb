@@ -1,32 +1,48 @@
-<div class="rajoy-row pbl">
-  <h3>Su voto ha sido contabilizado</h3>
-  <p>Publicaremos el resultado de la votación el 10 de enero de 2014.</p>
-  <p>Opcionalmente puede publicar su opinión acerca de la gestión de Mariano Rajoy.</p>             
-</div> 
+<% @title = "Voto completado, comparte tu opinión" %>
+<h1 class="rajoy-headline">Opina</h1>
+<div class="container">
+  <div class="rajoy-row-narrow">
+    <div id="slider" class="ui-wizard ui-wizard-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+        <div class="ui-wizard-label-pos" style="left: 0%;"><span class="ui-wizard-label">Vota</span></div> 
+        <div class="ui-wizard-label-pos" style="left: 50%;"><span class="ui-wizard-label">Verifica tu voto</span></div>
+        <div class="ui-wizard-label-pos" style="left: 100%;"><span class="ui-wizard-label">Opina</span></div>    
+        <div class="ui-wizard-range ui-widget-header ui-corner-all ui-wizard-range-min" style="width: 100%;"></div>    
+        <span class="ui-wizard-step ui-wizard-step-done ui-state-default ui-corner-all"  style="left: 0%;"><i class="fui-check-inverted"></i></span>     
+        <span class="ui-wizard-step ui-wizard-step-done ui-state-default ui-corner-all"  style="left: 50%;"><i class="fui-check-inverted"></i></span>
+        <span class="ui-wizard-step ui-wizard-step-current ui-state-default ui-corner-all" style="left: 100%;">3</span>
+    </div>
+  </div>
+  
+  <div class="rajoy-row pbl">
+    <h3>Su voto ha sido contabilizado</h3>
+    <p>Publicaremos el resultado de la votación el 10 de enero de 2014.</p>
+    <p>Opcionalmente puede publicar su opinión acerca de la gestión de Mariano Rajoy.</p>             
+  </div> 
 
-<%= form_for @comment, html: {id: 'form'} do |f| %>
-  <div class="rajoy-row-center">
-    <%= render "shared/flash" %>
-    <%= f.text_area :body, rows: 3, placeholder: "Mi opinión...", class: "span12" %>
-    <a href="#" id="submit" class="btn btn-block btn-primary btn-embossed">
-      Publicar mi opinión
+  <%= form_for @comment, html: {id: 'form'} do |f| %>
+    <div class="rajoy-row-center">
+      <%= render "shared/flash" %>
+      <%= f.text_area :body, rows: 3, placeholder: "Mi opinión...", class: "span12" %>
+      <a href="#" id="submit" class="btn btn-block btn-primary btn-embossed">
+        Publicar mi opinión
+      </a>
+      <a href="/" class="btn btn-block btn-embossed">
+        Volver a la página principal
+      </a>
+    </div>
+  <% end %>
+
+  <div class="rajoy-row-center social">
+    <p>Da a conocer DimisionRajoy.com</p>
+    <a href="http://www.facebook.com/share.php?u=dimisionrajoy.com" class="btn btn-small btn-social-facebook btn-embossed" 
+       onclick="return !window.open(this.href, 'Twitter', 'width=500,height=500')", target: "_blank">
+      <i class="fui-facebook"></i>
+      Compartir en Facebook
     </a>
-    <a href="#" class="btn btn-block btn-embossed">
-      Volver a la página principal
+    <a href="https://twitter.com/share?url=dimisionrajoy.com&text=<%= share_text %>" class="btn btn-small btn-social-twitter btn-embossed"
+       onclick="return !window.open(this.href, 'Twitter', 'width=500,height=500')", target: "_blank">
+      <i class="fui-twitter"></i>
+      Compartir en Twitter
     </a>
   </div>
-<% end %>
-
-<div class="rajoy-row-center social">
-  <p>Da a conocer DimisionRajoy.com</p>
-  <a href="http://www.facebook.com/share.php?u=dimisionrajoy.com" class="btn btn-small btn-social-facebook btn-embossed" 
-     onclick="return !window.open(this.href, 'Twitter', 'width=500,height=500')", target: "_blank">
-    <i class="fui-facebook"></i>
-    Compartir en Facebook
-  </a>
-  <a href="https://twitter.com/share?url=dimisionrajoy.com&text=<%= share_text %>" class="btn btn-small btn-social-twitter btn-embossed"
-     onclick="return !window.open(this.href, 'Twitter', 'width=500,height=500')", target: "_blank">
-    <i class="fui-twitter"></i>
-    Compartir en Twitter
-  </a>
 </div>

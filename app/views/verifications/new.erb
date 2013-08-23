@@ -1,20 +1,36 @@
-<div class="rajoy-row pbl">
-  <h3>Para evitar más de un voto por persona...</h3>
-  <p>Su voto todavía no ha sido contabilizado.</p>            
-  <p>Por favor introduzca su móvil y recibirá un SMS con un código de verificación.</p>
-</div> 
+<% @title = "Verifica tu voto" %>
+<h1 class="rajoy-headline">Verifica tu voto</h1>
+<div class="container">
+  <div class="rajoy-row-narrow">
+    <div id="slider" class="ui-wizard ui-wizard-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+        <div class="ui-wizard-label-pos" style="left: 0%;"><span class="ui-wizard-label">Vota</span></div> 
+        <div class="ui-wizard-label-pos" style="left: 50%;"><span class="ui-wizard-label">Verifica tu voto</span></div>
+        <div class="ui-wizard-label-pos" style="left: 100%;"><span class="ui-wizard-label">Opina</span></div>    
+        <div class="ui-wizard-range ui-widget-header ui-corner-all ui-wizard-range-min" style="width: 50%;"></div>    
+        <span class="ui-wizard-step ui-wizard-step-done ui-state-default ui-corner-all"  style="left: 0%;"><i class="fui-check-inverted"></i></span>     
+        <span class="ui-wizard-step ui-wizard-step-current ui-state-default ui-corner-all"  style="left: 50%;">2</span>
+        <span class="ui-wizard-step ui-state-default ui-corner-all" style="left: 100%;">3</span>
+    </div>
+  </div>
+  
+  <div class="rajoy-row pbl">
+    <h3>Para evitar más de un voto por persona...</h3>
+    <p>Su voto todavía no ha sido contabilizado.</p>            
+    <p>Por favor introduzca su móvil y recibirá un SMS con un código de verificación.</p>
+  </div> 
 
-<div class="rajoy-row">
-  <%= render "shared/flash" %>
-  <%= form_for @verification, html: {id: 'form'} do |f| %>
-    <div class="code-col" >
-      <%= f.text_field :phone, :autofocus => true, placeholder: "Número de móvil", class: "huge code-col"  %>
-    </div>
-    <div class="code-col">
-       <a href="#" id="submit" class="btn btn-huge btn-block btn-primary btn-embossed">
-         Conseguir código
-         <i class="fui-arrow-right pull-right"></i>
-       </a>
-    </div>
-  <% end %>
+  <div class="rajoy-row">
+    <%= render "shared/flash" %>
+    <%= form_for @verification, html: {id: 'form'} do |f| %>
+      <div class="code-col" >
+        <%= f.text_field :phone, :autofocus => true, placeholder: "Número de móvil", class: "huge code-col"  %>
+      </div>
+      <div class="code-col">
+         <a href="#" id="submit" class="btn btn-huge btn-block btn-primary btn-embossed">
+           Conseguir código
+           <i class="fui-arrow-right pull-right"></i>
+         </a>
+      </div>
+    <% end %>
+  </div>
 </div>

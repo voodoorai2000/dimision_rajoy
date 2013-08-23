@@ -1,11 +1,29 @@
-<div class="rajoy-row">
-  <h2>¿Cree que Mariano Rajoy debe dimitir como Presidente del Gobierno?</h2>
-</div>    
-<div class="rajoy-row">
-  <div class="rajoy-col">
-    <a href="<%= new_verification_path %>" class="btn btn-huge btn-block btn-primary btn-embossed mlm">Sí</a>
+<% @title = "Vota" %>
+
+<h1 class="rajoy-headline">Vota</h1>
+<div class="container">
+  <div class="rajoy-row-narrow">
+    <div id="slider" class="ui-wizard ui-wizard-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+      <div class="ui-wizard-label-pos" style="left: 0%;"><span class="ui-wizard-label">Vota</span></div> 
+      <div class="ui-wizard-label-pos" style="left: 50%;"><span class="ui-wizard-label">Verifica tu voto</span></div>
+      <div class="ui-wizard-label-pos" style="left: 100%;"><span class="ui-wizard-label">Opina</span></div>    
+      <div class="ui-wizard-range ui-widget-header ui-corner-all ui-wizard-range-min" style="width: 0%;"></div>
+      <!--<span class="ui-wizard-step ui-wizard-step-done ui-state-default ui-corner-all" style="left: 0%;"><i class="fui-check-inverted"></i></span>-->      
+      <span class="ui-wizard-step ui-wizard-step-current ui-state-default ui-corner-all"  style="left: 0%;">1</span>     
+      <span class="ui-wizard-step ui-state-default ui-corner-all"  style="left: 50%;">2</span>
+      <span class="ui-wizard-step ui-state-default ui-corner-all" style="left: 100%;">3</span>
+    </div>
   </div>
-  <div class="rajoy-col">
-    <a href="<%= new_verification_path %>" class="btn btn-huge btn-block btn-primary btn-embossed mlm">No</a>
+  
+  <div class="rajoy-row">
+    <h2>¿Cree que Mariano Rajoy debe dimitir como Presidente del Gobierno?</h2>
+  </div>    
+  <div class="rajoy-row">
+    <div class="rajoy-col">
+      <a href="<%= new_verification_path %>" class="btn btn-huge btn-block btn-primary btn-embossed mlm">Sí</a>
+    </div>
+    <div class="rajoy-col">
+      <a href="<%= new_verification_path %>" class="btn btn-huge btn-block btn-primary btn-embossed mlm">No</a>
+    </div>
   </div>
 </div>
