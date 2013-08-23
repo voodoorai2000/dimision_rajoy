@@ -1,6 +1,8 @@
-<% if alert %>
-  <div class="alert alert-error">
-    <button type="button" class="close fui-cross" data-dismiss="alert"></button>
-    <%= alert %>
-  </div>
+<% if flash.present? %>
+  <% flash.each do |name, msg| -%>
+    <div class="alert alert-error">
+      <button type="button" class="close fui-cross" data-dismiss="alert"></button>
+      <%= msg %>
+    </div>
+  <% end -%>
 <% end %>

@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to root_url
+      redirect_to "/#comments_header", notice: "Su opinión ha sido guardada"
     else
       render :edit
     end

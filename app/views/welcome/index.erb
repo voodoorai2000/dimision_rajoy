@@ -1,16 +1,49 @@
-<ul>
-<li>Jepeto de Rajoy</li>
-<li>Explicación</li>
-<li>Redes sociales</li>
-<li>Feed</li>
-</ul>
-
-<%= link_to "votar", new_vote_path %>
-
-<ul id="comments">
-  <%= render @comments %>
-</ul>
-
-<div id="pagination">
-  <%= link_to_next_page @comments, 'Ver más', remote: true %>
-</div>
+<h1 class="rajoy-headline-home"><img src="assets/mariano-rajoy.png"/><span class="rajoy-headline-home-title" style="">Dimisión Rajoy</span></h1>
+ <div class="container pbl">   
+   <div class="rajoy-row">
+      <h3>¿Merece un voto de confianza este gobierno?</h3>
+      <div class="rajoy-col">
+         <ul>
+           <li>Incumplimiento de promesas electorales.</li>
+           <li>Creación de nuevos impuestos y subidas históricas del IRPF e IVA.</li>
+           <li>Recortes en Educación y Sanidad.</li>
+           <li>Paro imparable.</li>
+         </ul>
+      </div>
+      <div class="rajoy-col">
+         <ul>
+           <li>Nacionalización de Bankia a cargo del bolsillo del ciudadano.</li>
+           <li>Amnistía fiscal para los ricos y poderosos.</li>
+           <li>‘Medicamentazo’ y copago farmacéutico.</li>
+           <li>Caso Bárcenas.</li>
+         </ul>          
+      </div>
+   </div>
+ </div>
+ <div class="dialog dialog-success">
+     <strong>Queremos saber lo que piensa la gente.</strong>
+     <a href="<%= new_vote_path %>" class="btn btn-primary btn-wide btn-huge btn-embossed mll">
+       <i class="fui-mail"></i>
+       ¡VOTA!
+     </a>
+ </div>
+ <div class="container">
+   <div id="comments_header" class="rajoy-row-quotes quotes">
+     <%= render "shared/flash" %>
+     <h5>Lo que opina la gente que ha votado...</h5>
+     <ul id="comments">
+       <%= render @comments %>
+     </ul>
+     <div id="pagination" class="rajoy-row-center">
+       <%= link_to_next_page @comments, 'Mostrar más', remote: true, class: "btn btn-embossed" %>
+     </div>
+   </div>
+   <%= render 'shared/social' %>
+ </div>
+ <div class="dialog dialog-success" style="margin-bottom: 40px;">
+     <strong>Queremos saber lo que piensa la gente.</strong>
+     <a href="<%= new_vote_path %>" class="btn btn-primary btn-wide btn-huge btn-embossed mll">
+       <i class="fui-mail"></i>
+       ¡VOTA!
+     </a>
+ </div>

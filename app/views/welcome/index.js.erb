@@ -1,2 +1,2 @@
 $('#comments').append('<%= j render(@comments) %>');
-$('#pagination').html("<%= j link_to_next_page(@comments, 'Ver más', remote: true) %>");
+$('#pagination').html("<%= j link_to_next_page(@comments, 'Mostrar más', remote: true, class: 'btn btn-embossed')%>");
