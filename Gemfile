@@ -27,6 +27,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'kaminari'
 gem 'twilio-ruby'
+gem 'geocoder'
 
 group :production, :staging do
   gem "pg"
