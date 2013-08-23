@@ -23,6 +23,7 @@
     <div class="rajoy-row-center">
       <%= render "shared/flash" %>
       <%= f.text_area :body, rows: 3, placeholder: "Mi opinión...", class: "span12" %>
+      <%= f.hidden_field :city, value: request.location.city %>
       <a href="#" id="submit" class="btn btn-block btn-primary btn-embossed">
         Publicar mi opinión
       </a>
@@ -33,7 +34,7 @@
   <% end %>
 
   <div class="rajoy-row-center social">
-    <p>Da a conocer DimisionRajoy.com</p> CITY:<%= request.location.inspect %>
+    <p>Da a conocer DimisionRajoy.com</p>
     <a href="http://www.facebook.com/share.php?u=dimisionrajoy.com" class="btn btn-small btn-social-facebook btn-embossed" 
        onclick="return !window.open(this.href, 'Twitter', 'width=500,height=500')", target: "_blank">
       <i class="fui-facebook"></i>
