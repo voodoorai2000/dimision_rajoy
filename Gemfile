@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'kaminari'
 gem 'twilio-ruby'
 gem 'geocoder'
+gem 'rack-cache'
 
 group :production, :staging do
   gem "pg"
