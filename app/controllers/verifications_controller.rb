@@ -6,29 +6,33 @@ class VerificationsController < ApplicationController
   def create
     @verification = Verification.new(verification_params)
     @verification.code = Random.new.rand(1000...9999)
-    @verification.save!
-    
-    begin
-      account_sid = ENV['DIMISION_RAJOY_TWILIO_SID']
-      auth_token  = ENV['DIMISION_RAJOY_TWILIO_TOKEN']
-      client = Twilio::REST::Client.new account_sid, auth_token
+    if @verification.save
+      begin
+        account_sid = ENV['DIMISION_RAJOY_TWILIO_SID']
+        auth_token  = ENV['DIMISION_RAJOY_TWILIO_TOKEN']
+        client = Twilio::REST::Client.new account_sid, auth_token
 
-      from = ENV['DIMISION_RAJOY_TWILIO_PHONE']
-      code = Random.new.rand(1000...9999)
+        from = ENV['DIMISION_RAJOY_TWILIO_PHONE']
+        code = Random.new.rand(1000...9999)
   
-      client.account.sms.messages.create(
-        :from => from,
-        :to => @verification.phone,
-        :body => "DimisionRajoy.com\nCódigo de verificación: #{@verification.code}"
-      )
-    rescue StandardError => bang
-      redirect_to new_verification_path, alert: "Error #{bang}"
-      return
+        client.account.sms.messages.create(
+          :from => from,
+          :to => @verification.phone,
+          :body => "DimisionRajoy.com\nCódigo de verificación: #{@verification.code}"
+        )
+        
+        puts "Código de verificación: #{@verification.code}"
+
+        redirect_to edit_verification_path(@verification)
+      rescue StandardError => bang
+        flash.now[:alert] = "Parece que este número no existe, por favor revíselo."
+        render action: 'new'
+        return
+      end
+    else
+      flash.now[:alert] = @verification.errors.messages.first.second.first
+      render action: 'new'
     end
-  
-    puts "Código de verificación: #{@verification.code}"
-    
-    redirect_to edit_verification_path(@verification)
   end
   
   def edit
