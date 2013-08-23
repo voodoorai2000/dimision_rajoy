@@ -6,7 +6,7 @@ class VerificationsController < ApplicationController
   def create
     @verification = Verification.new(verification_params)
     @verification.code = Random.new.rand(1000...9999)
-    if @verification.save
+    if @verification.valid?
       begin
         account_sid = ENV['DIMISION_RAJOY_TWILIO_SID']
         auth_token  = ENV['DIMISION_RAJOY_TWILIO_TOKEN']
@@ -21,13 +21,11 @@ class VerificationsController < ApplicationController
           :body => "DimisionRajoy.com\nCódigo de verificación: #{@verification.code}"
         )
         
-        puts "Código de verificación: #{@verification.code}"
-
+        @verification.save!
         redirect_to edit_verification_path(@verification)
       rescue StandardError => bang
         flash.now[:alert] = "Parece que este número no existe, por favor revíselo."
         render action: 'new'
-        return
       end
     else
       flash.now[:alert] = @verification.errors.messages.first.second.first

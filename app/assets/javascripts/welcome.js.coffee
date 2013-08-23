@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 if $('#verification_phone').val()?.length == 0
-  $('#verification_phone').val('+34 ')
+  $('#verification_phone').val('+34')
 
 $('#submit').click ->
   $('#form').submit()
