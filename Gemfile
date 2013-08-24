@@ -30,6 +30,7 @@ gem 'twilio-ruby'
 gem 'geocoder'
 gem 'rack-cache'
 gem 'newrelic_rpm'
+gem 'sentry-raven'
 
 group :production, :staging do
   gem "pg"
