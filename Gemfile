@@ -29,6 +29,7 @@ gem 'kaminari'
 gem 'twilio-ruby'
 gem 'geocoder'
 gem 'rack-cache'
+gem 'newrelic_rpm'
 
 group :production, :staging do
   gem "pg"
